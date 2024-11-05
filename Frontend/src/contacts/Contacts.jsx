@@ -1,18 +1,17 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Contact from '../components/Contact'
-import Footer from '../components/Footer'
+import Navbar from "../components/Navbar";
+import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 function Contacts() {
   return (
     <>
-    <Navbar/>
-    <div className='min-h-screen'>
-    <Contact/>
-    </div>
-    <Footer/>
+      <Navbar />
+      <div className="min-h-screen">
+        <Contact />
+      </div>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default Contacts
+export default Contacts;
