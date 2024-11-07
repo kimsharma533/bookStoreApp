@@ -16,7 +16,7 @@ function Cards({ item, addToCart }) {
             <div className="badge badge-outline">${item.price}</div>
             <div
               className="cursor-pointer px-2 py-1 rounded-full border-[2px] hover:bg-pink-500 hover:text-white duration-200"
-              onClick={() => addToCart(item._id)} // Pass only bookId
+              onClick={() => addToCart(item)}
             >
               Add to cart
             </div>

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext"; // Import useCart
+import { useCart } from "../context/CartContext";
 
 const Cart = () => {
-  const { cart } = useCart(); // Retrieve cart data from context
+  const { cart } = useCart();
 
   return (
     <div className="container mx-auto my-10 px-4">

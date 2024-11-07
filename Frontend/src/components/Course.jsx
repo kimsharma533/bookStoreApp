@@ -1,31 +1,31 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import Cards from "./Cards";
-import axios from "axios";
 import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext"; // Import useCart
+import { useCart } from "../context/CartContext";
 
 function Course() {
+  const { addToCart } = useCart();
   const [book, setBook] = useState([]);
-  const { addToCart } = useCart(); // Use addToCart from context
 
-  // Fetch books from the database
   useEffect(() => {
-    const getBook = async () => {
+    const fetchBooks = async () => {
       try {
-        const res = await axios.get("http://localhost:4001/book");
-        setBook(res.data);
+        const response = await fetch("http://localhost:4001/books");
+        const data = await response.json();
+        setBook(data);
       } catch (error) {
-        console.log(error);
+        console.error("Error fetching books:", error);
       }
     };
-    getBook();
+
+    fetchBooks();
   }, []);
 
   return (
     <div className="max-w-screen-2xl container mx-auto md:px-20 px-4">
       <div className="mt-28 items-center text-center justify-center">
         <h1 className="text-2xl md:text-4xl">
-          Were delighted to have you{" "}
+          We’re delighted to have you{" "}
           <span className="text-pink-500">Here! :)</span>
         </h1>
         <p className="mt-12">
